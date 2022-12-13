@@ -1,3 +1,50 @@
+// Get a reference to the clock element
+
+var clock = document.getElementById('clock');
+
+// Update the clock every second
+setInterval(function() {
+  var date = new Date();
+
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();
+
+  // Add leading zeros
+  hours = hours < 10 ? '0' + hours : hours;
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+  seconds = seconds < 10 ? '0' + seconds : seconds;
+
+  // Format the time string
+  var time = hours + ':' + minutes + ':' + seconds;
+
+  // Update the clock
+  clock.innerHTML = time;// Get a reference to the clock element
+
+  var clock = document.getElementById('clock');
+ 
+ // Update the clock every second
+ setInterval(function() {
+   var date = new Date();
+ 
+   var hours = date.getHours();
+   var minutes = date.getMinutes();
+   var seconds = date.getSeconds();
+ 
+   // Add leading zeros
+   hours = hours < 10 ? '0' + hours : hours;
+   minutes = minutes < 10 ? '0' + minutes : minutes;
+   seconds = seconds < 10 ? '0' + seconds : seconds;
+ 
+   // Format the time string
+   var time = hours + ':' + minutes + ':' + seconds;
+ 
+   // Update the clock
+   clock.innerHTML = time;
+ }, 1000);
+ 
+}, 1000);
+
 $(function ()
 {
   // Time slots required in 24hr clock (0-24)
@@ -14,7 +61,7 @@ $(function ()
   // Write current date to header
   dateTimeEl.text(currentDate);
 
-  // This loop will create time slots based on startTime and endTime.  This only runs on load/refresh
+  // This loop creates time slots based on startTime and endTime.  
   for (let i = startTime; i < endTime; i++)
   {
     let hour;
@@ -38,7 +85,7 @@ $(function ()
       tense = "future";
     }
 
-    // One long fun command - creates time slot div and supporting children for each hour
+    // One long command that creates time slot div and supporting children for each hour
     mainContainerEl.append(
       $("<div>", { "id": "hour-" + hour, "class": "row time-block " + tense }).append(
         $("<div>", { "class": "col-2 col-md-1 hour text-center py-3" }).text(hour + meridiem),
@@ -47,7 +94,7 @@ $(function ()
           $("<i>", { "class": "fas fa-save", "aria-hidden": "true" }))));
   }
 
-  // Click listener for the save button
+  // listener for the save button
   mainContainerEl.on("click", ".time-block button", function (event)
   {
     // Store input based on div id=hour-? as the key, and user input as the value.
@@ -151,13 +198,15 @@ function getMonthOfYear(month)
   return month;
 }
 
-// Adds ordinal indicators to the date
+// Adds ordinal indicators to the date "strftime function"
 function getOrdinalDate(ord)
 {
-  let s = ['th', 'st', 'nd', 'rd'];
-  let v = ord % 100; 
+  var s = ['th', 'st', 'nd', 'rd'];
+  var v = ord % 100; 
 
   
   // https://leancrew.com/all-this/2020/06/ordinal-numerals-and-javascript/
-  return ord + (s[(v - 20) % 10] || s[v] || s[0]);
+    return ord + (s[(v - 20) % 10] || s[v] || s[0]);
 }
+
+

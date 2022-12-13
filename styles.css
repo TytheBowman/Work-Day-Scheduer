@@ -1,11 +1,18 @@
 /* Define font and background color */
 body {
     font-family: sans-serif;
-    background-color: blue;
+    background-color: wheat;
   }
   
   /* Style the current day display */
   #current-day {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0;
+  }
+  
+  /* Style the clock */
+  #clock {
     text-align: center;
     font-size: 24px;
     margin: 20px 0;
