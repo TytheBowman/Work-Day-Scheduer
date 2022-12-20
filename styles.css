@@ -1,65 +1,59 @@
-/* Define font and background color */
 body {
-    font-family: sans-serif;
-    background-color: wheat;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
   }
   
-  /* Style the current day display */
-  #current-day {
-    text-align: center;
-    font-size: 24px;
-    margin: 20px 0;
+  textarea {
+    background: transparent;
+    border: none;
+    resize: none;
+    color: #000000;
+    border-left: 1px solid black;
+    padding: 10px;
   }
   
-  /* Style the clock */
-  #clock {
-    text-align: center;
-    font-size: 24px;
-    margin: 20px 0;
-  }
-  
-  /* Style the time blocks */
-  .time-blocks {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .description {
+    white-space: pre-wrap;
   }
   
   .time-block {
-    width: 80%;
-    margin: 10px 0;
-    padding: 10px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+    border-radius: 15px;
   }
   
-  /* Style the time block time display */
-  .time-block-time {
-    font-size: 16px;
-    margin: 0 0 10px 0;
+  .row {
+    border-top: 1px solid white;
   }
   
-  /* Style the time block event textarea */
-  .time-block-event {
-    width: 100%;
-    height: 60px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    resize: none;
+  .hour {
+    background-color: #ffffff;
+    color: #000000;
+    border-top: 1px dashed #000000;
   }
   
-  /* Style the save button */
-  .save-btn {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    background-color: #2ecc71;
+  .past {
+    background-color: #d3d3d3;
     color: white;
-    cursor: pointer;
   }
   
- 
+  .present {
+    background-color: #ff6961;
+    color: white;
+  }
+  
+  .future {
+    background-color: #77dd77;
+    color: white;
+  }
+  
+  .saveBtn {
+    border-left: 1px solid black;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #06aed5;
+    color: white;
+  }
+  
+  .saveBtn i:hover {
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
+  }
